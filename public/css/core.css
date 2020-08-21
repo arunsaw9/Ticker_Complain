@@ -1,0 +1,42 @@
+	.status_select{
+		height: calc(1.5em + .75rem + 2px);
+	    padding: .375rem .75rem;
+	    font-size: 1rem;
+	    font-weight: 400;
+	    line-height: 1.5;
+	    color: #495057;
+	    background-color: #fff;
+	    background-clip: padding-box;
+	    border: 1px solid #ced4da;
+	    border-radius: .25rem;
+	    transition: border-color .15s;
+	}
+
+
+	
+	.contact-form input, .contact-form textarea{
+	        border: 1px solid #e4e4e4;
+	}
+	.no-arrow {
+	  -moz-appearance: textfield;
+	}
+	.no-arrow::-webkit-inner-spin-button {
+	  display: none;
+	}
+	.no-arrow::-webkit-outer-spin-button,
+	.no-arrow::-webkit-inner-spin-button {
+	  -webkit-appearance: none;
+	  margin: 0;
+	}
+	.contact-form label {
+	     margin-bottom: 5px;
+	}
+	.contact-form textarea {
+	     height: 100px;
+	}
+	.contact-form input {
+	    height: 45px;
+	}
+	.pb-120 {
+	    padding-bottom: 45px;
+	}
