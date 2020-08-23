@@ -22,7 +22,7 @@ class ComplainController extends Controller
     }
 
     public function store(Request $request){
-
+        //return $request->all();
     	$this->validate($request,[
             'name' =>'required',
             'email' =>'required',
@@ -53,8 +53,7 @@ class ComplainController extends Controller
         $save->description = $request->description;
         $save->status = 'Pending';
     	$save->save();
-
-    	return redirect()->route('front');
+        return redirect()->back()->with('success', 'Success!! Your complaint registered successfully');
     }
 
     public function status()

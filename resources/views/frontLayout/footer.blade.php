@@ -2,7 +2,7 @@
     <footer id="footer" class="footer-area bg_cover" style="background-image: url(assets/images/footer-bg.jpg)">
         <div class="container">
             <div class="footer-copyright text-center">
-                <p class="text">© 2020 Crafted by <a href="https://uideck.com" rel="nofollow">ONGC</a> All Rights Reserved.</p>
+                <p class="text"> Crafted by <a href="https://uideck.com" rel="nofollow">ONGC</a></p>
             </div>
         </div> <!-- container -->
     </footer>
@@ -20,10 +20,3 @@
     <script src="{{ ('js/core.js') }} "></script>
 
     
-
-    <script>
-        $(document).ready(function(){
-            
-        
-        });
-    </script>

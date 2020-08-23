@@ -11,7 +11,15 @@
 
                     <div class="card">
                         <div class="card-body">
-                            <h4 class="contact-title pb-10"><i class="lni-envelope"></i> launched <span>your complain</span></h4>
+
+                            @if ($message = Session::get('success'))
+                            <div class="alert alert-success alert-block">
+                                <button type="button" class="close" data-dismiss="alert">×</button> 
+                                    <strong>{{ $message }}</strong>
+                            </div>
+                            @endif
+
+                            <h4 class="contact-title pb-10"><i class="lni-envelope"></i> launch <span> your complaint</span></h4>
                         
                         <form id="contact-form" action="{{ route('complain.store') }}" method="post" >
                             @csrf
@@ -87,26 +95,33 @@
                                     </div>
                                 </div>
 
+
+
                                 <div class="col-md-6">
                                     <div class="contact-form mt-15 {{ $errors->has('name') ? 'has-error' : ''}}">
                                         <label for="">Subject</label>
-                                        <select id="" class="form-control" name="subject">
-                                          <option value="UPS not working">UPS not working </option>
-                                          <option value="UPS Battery backup">UPS Battery backup</option>
-                                          <option value="Noise in UPS">Noise in UPS</option>
-                                          <option value="Noise in Server room">Noise in Server room</option>
-                                          <option value="SCADA login Problem">SCADA login Problem </option>
-                                          <option value="SCADA HMI/Computer">SCADA HMI/Computer </option>
-                                          <option value="SCADA not opening">SCADA not opening</option>
-                                          <option value="No value display">No value display</option>
-                                          <option value="Historical data not displayed">Historical data not displayed</option>
-                                          <option value="Display value strike off">Display value strike off</option>
-                                          <option value="Wrong Value Display">Wrong Value Display</option>
-                                          <option value="SCADA server Problem">SCADA server Problem</option>
-                                          <option value="Display Value not changing">Display Value not changing</option>
-                                          <option value="SCADA unavailable">SCADA unavailable</option>
-                                          <option value="SCADA data Hanged / freez">SCADA data Hanged / freez</option>
-                                        </select> 
+                                        <input name="subject" type=text list=subject>
+                                        <datalist id=subject>
+                                            <option value="UPS not working">UPS not working </option>
+                                            <option value="UPS Battery backup">UPS Battery backup</option>
+                                            <option value="Noise in UPS">Noise in UPS</option>
+                                            <option value="Noise in Server room">Noise in Server room</option>
+                                            <option value="SCADA login Problem">SCADA login Problem </option>
+                                            <option value="SCADA HMI/Computer">SCADA HMI/Computer </option>
+                                            <option value="SCADA not opening">SCADA not opening</option>
+                                            <option value="No value display">No value display</option>
+                                            <option value="Historical data not displayed">Historical data not displayed</option>
+                                            <option value="Display value strike off">Display value strike off</option>
+                                            <option value="Wrong Value Display">Wrong Value Display</option>
+                                            <option value="SCADA server Problem">SCADA server Problem</option>
+                                            <option value="Display Value not changing">Display Value not changing</option>
+                                            <option value="SCADA unavailable">SCADA unavailable</option>
+                                            <option value="SCADA data Hanged / freez">SCADA data Hanged / freez</option>
+                                        </datalist>
+                                        {{-- <select id="" class="form-control" name="subject">
+                                          
+                                        </select>  --}}
+
                                         {!! $errors->first('subject', '<p class="help-block" style="color: red;">:message</p>') !!}
                                     </div>
                                 </div>
