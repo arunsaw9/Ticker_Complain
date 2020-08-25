@@ -1,3 +1,5 @@
+
+
 @extends('layouts.myapp')
 
 <style>
@@ -100,13 +102,22 @@
                         @csrf
                         <h4 class="card-title font-weight-bold"> Resolution</h4>
                         <div class="form-group">
-                            <textarea name="resolution" class="form-control rounded-0" rows="3" placeholder="Resolution"></textarea>
+                            <textarea name="resolution" class="form-control rounded-0" rows="3" placeholder="Resolution">
+                              @if($resolution->isEmpty())
+
+                              @else
+                              {{ $resolution[0]['complain_resolution'] }}
+                              @endif
+                            </textarea>
                         </div>
                         <label for="">Status</label>
                         <select id="" class="form-control" name="status">
-                            <option value="" >Select Status</option>
+                            <option value="{{ $single->status }}" > {{ $single->status }} </option>
+                            @if( $single->status == 'Success')
                             <option value="Uncomplete" >Uncomplete</option>
+                            @else
                             <option value="Success" >Success</option>
+                            @endif
                         </select> 
 
                         <input type="hidden" name="complain_id" value="{{ $single->id }}">

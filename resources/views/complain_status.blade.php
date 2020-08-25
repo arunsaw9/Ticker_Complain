@@ -76,19 +76,8 @@
 
 
 @section('footerSection')
-	{{-- <script language="JavaScript" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js" type="text/javascript"></script>
-	<script language="JavaScript" src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js" type="text/javascript"></script> --}}
-
 	<script language="JavaScript" src="{{ ('dataTables/js/jquery.dataTables.min.js') }}" type="text/javascript"></script>
 	<script language="JavaScript" src="{{ ('dataTables/js/dataTables.bootstrap4.min.js') }}" type="text/javascript"></script>
 	<script language="JavaScript" src="{{ ('dataTables/js/dataTables.responsive.min.js') }}" type="text/javascript"></script>
 	<script language="JavaScript" src="{{ ('dataTables/js/responsive.bootstrap4.min.js') }}" type="text/javascript"></script>
-
-
-
-
-	{{-- <script language="JavaScript" src="{{ ('dataTables/js/jquery.dataTables.min.js') }}" type="text/javascript"></script>
-    <script language="JavaScript" src="{{ ('dataTables/js/dataTables.bootstrap.min.js') }}" type="text/javascript"></script>
-    <script language="JavaScript" src="{{ ('dataTables/js/dataTables.responsive.min.js') }}" type="text/javascript"></script>
-    <script language="JavaScript" src="{{ ('dataTables/js/responsive.bootstrap.min.js') }}" type="text/javascript"></script> --}}
 @endsection

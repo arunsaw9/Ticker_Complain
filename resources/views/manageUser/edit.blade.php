@@ -37,7 +37,7 @@
                                                       <div class="col-md-8">
                                                           <div class="position-relative has-icon-left">
                                                               <input type="text" id="fname-icon" class="form-control" name="name" value="{{$update->name }}">
-                                                              <div class="form-control-position" style="margin-top: 2.3%;">
+                                                              <div class="form-control-position" >
                                                              <i class="feather icon-user"></i>
                                                         </div>
                                                       </div>
@@ -52,7 +52,7 @@
                                                       <div class="col-md-8">
                                                           <div class="position-relative has-icon-left">
                                                             <input type="email" id="fname-icon" class="form-control" name="email" value="{{$update->email }}">
-                                                              <div class="form-control-position" style="margin-top: 2.3%;">
+                                                              <div class="form-control-position" >
                                                                 <i class="feather icon-mail"></i>
                                                             </div>
                                                           </div>
@@ -67,8 +67,8 @@
                                                         </div>
                                                       <div class="col-md-8">
                                                           <div class="position-relative has-icon-left">
-                                                            <input type="text" id="fname-icon" class="form-control" name="CPF_No" value="{{$update->cpf_no }}">
-                                                              <div class="form-control-position" style="margin-top: 2.3%;">
+                                                            <input type="text" id="fname-icon" class="form-control" name="CPF_No" value="{{$update->cpf_no }}" style="padding-left: 1rem;">
+                                                              <div class="form-control-position" >
                                                                 {{-- <i class="feather icon-mail"></i> --}}
                                                             </div>
                                                           </div>
@@ -84,9 +84,12 @@
                                                       <div class="col-md-8">
                                                           <div class="position-relative has-icon-left">
                                                               <select name="role" class="custom-select" id="customSelect">
-                                                                  <option selected="">Select One</option>
-                                                                  <option value="Admin">Admin</option>
+                                                                  <option selected="" value="{{$update->role }}">{{$update->role }}</option>
+                                                                  @if($update->role == 'Admin')
                                                                   <option value="User">User</option>
+                                                                  @else
+                                                                  <option value="Admin">Admin</option>
+                                                                  @endif
                                                               </select>
                                                             </div>
                                                           </div>

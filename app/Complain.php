@@ -10,4 +10,6 @@ class Complain extends Model
     {
         return $this->hasOne('App\Assets', 'id', 'location');
     }
+
+    
 }

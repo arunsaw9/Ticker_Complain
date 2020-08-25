@@ -35,8 +35,11 @@ class HomeController extends Controller
 
     public function single($id)
     {
+        //return $id;
+         $resolution = Resolution::with('complains')->where('complain_id', $id)->get();
+        
         $single = Complain::findOrFail($id);
-        return view('complains.single', compact('single'));
+        return view('complains.single', compact('single', 'resolution'));
     }
 
     public function resolution(Request $request)
@@ -47,12 +50,26 @@ class HomeController extends Controller
             'status' =>'required',
         ]);
 
-        $save = new Resolution;
-        $save->user_id = Auth::user()->id;
-        $save->complain_id = $request->complain_id;
-        $save->complain_resolution = $request->resolution;
-        $save->save();
-
+        $count = Resolution::where('complain_id', $request->complain_id)->get();
+        if ($count->isEmpty()) {
+            $count = '';
+        }else{
+            $count = $count[0]['id'];
+        }
+        if($count > 0 ) {
+            $update = Resolution::find($count);
+            $update->user_id = Auth::user()->id;
+            $update->complain_id = $request->complain_id;
+            $update->complain_resolution = $request->resolution;
+            $update->save();
+        }else{
+            $save = new Resolution;
+            $save->user_id = Auth::user()->id;
+            $save->complain_id = $request->complain_id;
+            $save->complain_resolution = $request->resolution;
+            $save->save();
+        }
+        
         $complain = Complain::findOrFail($request->complain_id);
         $complain->status = $request->status;
         $complain->save();

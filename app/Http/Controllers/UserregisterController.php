@@ -115,7 +115,7 @@ class UserregisterController extends Controller
      */
     public function destroy($id)
     {
-        User::where('_id',$id)->delete();
+        User::where('id',$id)->delete();
         return redirect()->back()->with('message','User is deleted successfully');
     }
 }
