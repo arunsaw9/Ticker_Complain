@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Complain;
+use App\Assets;
 use App\Resolution;
 use Redirect;
 use Auth;
@@ -28,14 +29,26 @@ class HomeController extends Controller
 
 
     public function index()
-    {
-         $complains = Complain::with('assets')->get();
-        return view('complains.index', compact('complains'));
+    {  
+        $Assets = Assets::all();
+        $complains = Complain::with('assets')->paginate(5);
+        return view('complains.index', compact('complains', 'Assets'));
+    }
+
+
+    public function search(Request $request){
+
+        $this->validate($request,[
+
+            'asset' => 'required'
+        ]);
+        
+        $complains = Complain::where('location', $request->asset)->with('assets')->get();
+        return view('complains.search', compact('complains'));
     }
 
     public function single($id)
     {
-        //return $id;
          $resolution = Resolution::with('complains')->where('complain_id', $id)->get();
         
         $single = Complain::findOrFail($id);

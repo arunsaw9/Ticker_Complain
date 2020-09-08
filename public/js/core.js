@@ -48,7 +48,7 @@ $(document).ready(function(){
                     $('#sublocation').empty();
                     for (var i in data) {
                        //console.log(data[i],i)
-                       $('#sublocation').append('<option value='+data[i].location+'>'+data[i].location+'</option>');
+                       $('#sublocation').append("<option value='" +data[i].location+ "'>"+data[i].location+"</option>");
                     }
 
                 })

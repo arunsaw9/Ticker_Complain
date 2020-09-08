@@ -32,6 +32,8 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::get('/single/{id}', 'HomeController@single')->name('complain.single');
 	Route::post('/resolution/', 'HomeController@resolution')->name('complain.resolution');
 
+	Route::post('/search/', 'HomeController@search')->name('complain.search');
+
 	Route::resource('/registration', 'UserregisterController');
 
 });

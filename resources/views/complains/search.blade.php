@@ -16,40 +16,15 @@
               <div class="col-12">
                 <div class="card">
                   <div class="card-header">
-
-                    <h4 class="mb-0">Complains</h4>
-
-                    <form action="{{ route('complain.search') }}" method="post" novalidate="novalidate">
-                      @csrf
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div class="row">
-                                    <div class="col-lg-6 col-md-6 col-sm-12 p-0 {{ $errors->has('name') ? 'has-error' : ''}}">
-                                        <select name="asset" class="form-control" id="assets" required>
-                                          <option value="" hidden>Select Assets</option>
-                                          @foreach($Assets as $asset)
-                                            <option value="{{ $asset->id }}">{{ $asset->asset }}</option> 
-                                          @endforeach
-                                        </select>
-                                    </div>
-                                    <div class="col-lg-6 col-md-6 col-sm-12 p-0">
-                                        <button type="submit" class="btn btn-danger wrn-btn">Search</button>
-                                    </div>
-                                    {!! $errors->first('asset', '<p class="help-block" style="color: red;">:message</p>') !!}
-                                </div>
-                            </div>
-                        </div>
-                    </form>
+                    <h4 class="mb-0">Search Result</h4>
                   </div>
-
-
 
                   <div class="card-content">
                     <div class="table-responsive mt-1">
                       <table class="table table-hover-animation mb-0">
                         <thead>
-                          <tr>
-                            {{-- <th>S.N.</th> --}}
+                          <tr>  
+                            <th>S.N.</th>
                             <th>NAME</th>
                             <th>Mobile</th>
                             <th>Asset</th>
@@ -62,7 +37,7 @@
                         <tbody>
                           @foreach($complains as $complain)
                           <tr>
-                           {{--  <td>{{ $loop->index + 1 }}</td> --}}
+                            <td>{{ $loop->index + 1 }}</td>
                             <td>{{ $complain->name }}</td>
                             <td>{{ $complain->mobile }}</td>
 
@@ -78,14 +53,10 @@
                       </table>
                     </div>
                   </div>
-                </div>
               </div>
-
             </div>
           </section>
-          <div class="d-flex justify-content-center">
-              {!! $complains->links() !!}
-          </div>
+
         </div>
       </div>
     </div>

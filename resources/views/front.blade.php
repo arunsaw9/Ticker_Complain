@@ -49,10 +49,10 @@
                                     </div> <!-- contact-form -->
                                 </div>
                                 <div class="col-md-6">
-                                    <div class="contact-form mt-15 {{ $errors->has('name') ? 'has-error' : ''}}">
+                                    <div class="contact-form mt-15 ">
                                         <label>CPF No.</label>
                                         <input type="number" class="no-arrow" name="cpf_no" placeholder="CPF no">
-                                        {!! $errors->first('cpf_no', '<p class="help-block" style="color: red;">:message</p>') !!}
+                                        
                                     </div> <!-- contact-form -->
                                 </div>
                             </div>

@@ -1,10 +1,5 @@
 
-
 @extends('layouts.myapp')
-
-<style>
-
-</style>
 
 @section('content')
 
@@ -113,11 +108,19 @@
                         <label for="">Status</label>
                         <select id="" class="form-control" name="status">
                             <option value="{{ $single->status }}" > {{ $single->status }} </option>
-                            @if( $single->status == 'Success')
-                            <option value="Uncomplete" >Uncomplete</option>
+                            @if( $single->status == 'Pending')
+                              <option value="Incomplete" >Incomplete</option>
+                              <option value="Success" >Success</option>
+
                             @else
-                            <option value="Success" >Success</option>
+                              @if( $single->status == 'Success')
+                                <option value="Incomplete" >Incomplete</option>
+                              @else
+                                <option value="Success" >Success</option>
+                              @endif
                             @endif
+
+                            
                         </select> 
 
                         <input type="hidden" name="complain_id" value="{{ $single->id }}">

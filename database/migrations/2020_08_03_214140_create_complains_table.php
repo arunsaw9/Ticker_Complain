@@ -18,7 +18,7 @@ class CreateComplainsTable extends Migration
             $table->string('name');
             $table->string('email');
             $table->bigInteger('mobile');
-            $table->integer('cpf_no');
+            $table->integer('cpf_no')->nullable();
             $table->string('project_type');
             $table->string('location');
             $table->string('sub_location');
