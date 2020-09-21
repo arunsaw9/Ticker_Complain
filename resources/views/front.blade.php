@@ -19,22 +19,23 @@
                             </div>
                             @endif
 
-                            <h4 class="contact-title pb-10"><i class="lni-envelope"></i> launch <span> your complaint</span></h4>
+                            <h4 class="contact-title pb-10"><i class="lni-envelope"></i> Launch <span> your complaint</span></h4>
                         
                         <form id="contact-form" action="{{ route('complain.store') }}" method="post" >
                             @csrf
+
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="contact-form mt-15 {{ $errors->has('name') ? 'has-error' : ''}}">
                                         <label> Name</label>
-                                        <input type="text" name="name" placeholder="Full Name" value="{{ old('username') }}">
+                                        <input type="text" name="name" placeholder="Full Name" value="{{ old('name') }}" >
                                     </div> <!-- contact-form -->
                                     {!! $errors->first('name', '<p class="help-block" style="color: red;">:message</p>') !!}
                                 </div>
                                 <div class="col-md-6">
                                     <div class="contact-form mt-15 {{ $errors->has('name') ? 'has-error' : ''}}">
                                         <label> Email</label>
-                                        <input type="email" name="email" placeholder="Email" value="{{ old('username') }}">
+                                        <input type="email" name="email" placeholder="Email" value="{{ old('email') }}">
                                         {!! $errors->first('email', '<p class="help-block" style="color: red;">:message</p>') !!}
                                     </div> <!-- contact-form -->
                                 </div>
@@ -44,14 +45,14 @@
                                 <div class="col-md-6" >
                                     <div class="contact-form mt-15 {{ $errors->has('name') ? 'has-error' : ''}}">
                                         <label>Mobile</label>
-                                        <input type="number" class="no-arrow" name="mobile" placeholder="Mobile">
+                                        <input type="number" class="no-arrow" name="mobile" placeholder="Mobile" value="{{ old('mobile') }}">
                                         {!! $errors->first('mobile', '<p class="help-block" style="color: red;">:message</p>') !!}
                                     </div> <!-- contact-form -->
                                 </div>
                                 <div class="col-md-6">
                                     <div class="contact-form mt-15 ">
                                         <label>CPF No.</label>
-                                        <input type="number" class="no-arrow" name="cpf_no" placeholder="CPF no">
+                                        <input type="number" class="no-arrow" name="cpf_no" placeholder="CPF no" value="{{ old('cpf_no') }}" >
                                         
                                     </div> <!-- contact-form -->
                                 </div>
@@ -130,7 +131,7 @@
                                 <div class="col-md-12">
                                     <div class="contact-form mt-15 {{ $errors->has('name') ? 'has-error' : ''}}">
                                         <label>Your Message</label>
-                                        <textarea name="description" placeholder="Enter your message..."></textarea>
+                                        <textarea name="description" placeholder="Enter your message...">{{old('description')}}</textarea>
                                     </div> <!-- contact-form -->
                                     {!! $errors->first('description', '<p class="help-block" style="color: red;">:message</p>') !!}
                                 </div>

@@ -32,6 +32,8 @@ class AssetsTableSeeder extends Seeder
     		['asset' => 'Karaikal'],
     		['asset' => 'Frontier basin'],
     		['asset' => 'MBA basin'],
+            // ['asset' => 'Delhi'],
+            // ['asset' => 'Dehradun'],
 
     	];
     	//DB::table('assets')->delete();

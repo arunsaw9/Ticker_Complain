@@ -33,10 +33,14 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::post('/resolution/', 'HomeController@resolution')->name('complain.resolution');
 
 	Route::post('/search/', 'HomeController@search')->name('complain.search');
+	Route::get('/changepassword/{id}', 'HomeController@changepassword')->name('change.password');
 
-	Route::resource('/registration', 'UserregisterController');
+	Route::resource('/registration', 'UserregisterController')->middleware('can:isAdmin');
 
 });
+
+
+
 
 Auth::routes([
   'register' => false, 

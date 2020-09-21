@@ -176,6 +176,9 @@ class AssetslocationsTableSeeder extends Seeder
         	['asset_id' => 18, 'services_id' => 1, 'location' => 'Silchar'],
         	['asset_id' => 19, 'services_id' => 1, 'location' => 'U&T'],
 
+            ['asset_id' => 20, 'services_id' => 1, 'location' => 'Delhi-01'],
+            ['asset_id' => 21, 'services_id' => 1, 'location' => 'Dehradun-01'],
+
         	//========== For Drilling =======================
 
         	['asset_id' => 1, 'services_id' => 2, 'location' => 'E-1400-10'],
@@ -247,6 +250,9 @@ class AssetslocationsTableSeeder extends Seeder
 
         	['asset_id' => 18, 'services_id' => 2, 'location' => 'E-1400-12'],
         	['asset_id' => 18, 'services_id' => 2, 'location' => 'E-1400-11'],
+
+            ['asset_id' => 20, 'services_id' => 2, 'location' => 'Delhi-01'],
+            ['asset_id' => 21, 'services_id' => 2, 'location' => 'Dehradun-01'],
 
         ];
 

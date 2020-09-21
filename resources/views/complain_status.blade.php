@@ -54,11 +54,11 @@
                     <thead>
                         <tr>
                             <th>Name</th>
-                            <th>Email</th>
                             <th>Mobile</th>
-                            <th>Services</th>
                             <th>Location</th>
                             <th>Sub Location</th>
+                            <th>Resolution</th>
+                            <th>Date</th>
                             <th>Status</th>
                         </tr>
                     </thead>
@@ -80,4 +80,7 @@
 	<script language="JavaScript" src="{{ ('dataTables/js/dataTables.bootstrap4.min.js') }}" type="text/javascript"></script>
 	<script language="JavaScript" src="{{ ('dataTables/js/dataTables.responsive.min.js') }}" type="text/javascript"></script>
 	<script language="JavaScript" src="{{ ('dataTables/js/responsive.bootstrap4.min.js') }}" type="text/javascript"></script>
+
+    <script language="JavaScript" src="{{ ('dataTables/moment/moment.min.js') }}" type="text/javascript"></script>
+    <script language="JavaScript" src="{{ ('dataTables/moment/datetime-moment.js') }}" type="text/javascript"></script>
 @endsection

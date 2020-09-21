@@ -163,6 +163,7 @@ $(document).ready(function(){
                     var table = $('#example').DataTable();
                     table.clear().draw();
                 }else{
+                  $.fn.dataTable.moment('DD/MM/YYYY HH:mm');
                     $('#example').DataTable({
                          "processing": true,
                          "info": true,
@@ -171,18 +172,34 @@ $(document).ready(function(){
                          "bDestroy": true,
                          "columns": [
                              { "data": "name" },
-                             { "data": "email" },
                              { "data": "mobile" },
-                             { "data": "project_type" },
                              { "data": "assets.asset" },
                              { "data": "sub_location" },
+                             { "data": "description" },
+                             { "data": "created_at" },
                              {
                                  "data": "Inquiry", "bSearchable": false, "bSortable": false, "sWidth": "40px",
                                  "data": function (data) {
                                      return '<button class="btn btn-success" type="button">' + data.status + '</button>'
                                  }
                              }
-                         ]
+                         ],
+                         "columnDefs": [
+                             {
+                                 "targets": [5],
+                                 "type" : "date",
+                                 "render": function (data) {
+                                     if (data !== null) {
+                                         var javascriptDate = new Date(data);
+                                         javascriptDate = javascriptDate.getMonth() + 1 + "/" + javascriptDate.getDate() + "/" + javascriptDate.getFullYear();
+                                         return javascriptDate;
+                                     } else {
+                                         return "";
+                                     }
+                                 }
+                             }
+                         ] 
+
                      });   
                 }
                     

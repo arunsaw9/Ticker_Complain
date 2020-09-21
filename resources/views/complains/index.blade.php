@@ -70,7 +70,18 @@
                             <td>{{ $complain->sub_location }}</td>
 
                             <td><a href="{{ route('complain.single', $complain->id) }}">{{ $complain->subject }}</a></td>
-                            <td>{{ $complain->status }}</td>
+
+                            <td>
+                              @if($complain->status=='Success')
+                              <strong><p style="color:#00ff25;">{{ $complain->status }}</p></strong>
+                              @elseif($complain->status=='Incomplete')
+                              <strong><p style="color:#eb9800;">{{ $complain->status }}</p></strong>
+                              @else
+                              <strong><p style="color:#ff2500;">{{ $complain->status }}</p></strong>
+                              @endif
+                            </td>
+
+
                             <td style="width: 15%;">{{ date('d-m-Y', strtotime($complain->created_at)) }}</td>
                           </tr>
                           @endforeach

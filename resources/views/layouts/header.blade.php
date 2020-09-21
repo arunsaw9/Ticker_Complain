@@ -32,8 +32,8 @@
                 <div class="dropdown-menu dropdown-menu-right">
                  {{--  <a class="dropdown-item" href="page-user-profile.html"><i class="feather icon-user"></i> Edit Profile</a>
                   <a class="dropdown-item" href="app-email.html"><i class="feather icon-mail"></i> My Inbox</a>
-                  <a class="dropdown-item" href="app-todo.html"><i class="feather icon-check-square"></i> Task</a>
-                  <a class="dropdown-item" href="app-chat.html"><i class="feather icon-message-square"></i> Chats</a> --}}
+                  <a class="dropdown-item" href="app-todo.html"><i class="feather icon-check-square"></i> Task</a>--}}
+                  <a class="dropdown-item" href="{{ route('change.password') }}"><i class="feather icon-lock"></i> Change Password</a> 
 
                   <div class="dropdown-divider"></div>
                   <a class="dropdown-item" href="{{ route('logout') }}"

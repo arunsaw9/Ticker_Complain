@@ -13,7 +13,8 @@ class ComplainController extends Controller
 {
     public function index(){
 
-        $assets = Assets::all();
+        //$assets = Assets::all();
+        $assets = Assets::orderby('asset')->get();
     	return view('front', compact('assets'));
     }
 
@@ -53,7 +54,7 @@ class ComplainController extends Controller
         $save->description = $request->description;
         $save->status = 'Pending';
     	$save->save();
-        return redirect()->back()->with('success', 'Success!! Your complaint registered successfully');
+        return redirect()->back()->with('success', 'Success!! Your complaint has been registered successfully');
     }
 
     public function status()

@@ -82,13 +82,14 @@ class HomeController extends Controller
             $save->complain_resolution = $request->resolution;
             $save->save();
         }
-        
         $complain = Complain::findOrFail($request->complain_id);
         $complain->status = $request->status;
         $complain->save();
-
         return redirect()->back()->with('success', 'Resolution submited succssfully.');   
-         
+    }
+
+    public function changepassword($id){
+        return  $id;
     }
 
 }

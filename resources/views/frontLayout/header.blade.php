@@ -5,7 +5,7 @@
                     <div class="col-lg-12">
                         <nav class="navbar navbar-expand-lg">
                             <a class="navbar-brand" href="{{ route('front') }}">
-                                <h2 style="color: #a21045">SCADA <span style="font-size: 20px;color: #bc044f;margin-left: -10px;">Complain</span></h2>
+                                <h2 style="color: #a21045">SCADA <span style="font-size: 20px;color: #bc044f;margin-left: -10px;">Complaint</span></h2>
                                 {{-- <img src="assets/images/logo.png" alt="Logo"> --}}
                             </a>
                             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
