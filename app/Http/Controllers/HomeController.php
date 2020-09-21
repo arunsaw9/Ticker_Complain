@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Complain;
 use App\Assets;
 use App\Resolution;
+use App\User;
 use Redirect;
 use Auth;
 
@@ -49,15 +50,15 @@ class HomeController extends Controller
 
     public function single($id)
     {
-         $resolution = Resolution::with('complains')->where('complain_id', $id)->get();
-        
+        $resolution = Resolution::with('complains')->where('complain_id', $id)->get();
+        //$resolution = Resolution::with('solvers')->where('complain_id', $id)->get();
+        //echo "<pre>";print_r($resolution->toArray());die;
         $single = Complain::findOrFail($id);
         return view('complains.single', compact('single', 'resolution'));
     }
 
     public function resolution(Request $request)
     {
-
         $this->validate($request,[
             'resolution' =>'required',
             'status' =>'required',
@@ -88,8 +89,22 @@ class HomeController extends Controller
         return redirect()->back()->with('success', 'Resolution submited succssfully.');   
     }
 
-    public function changepassword($id){
-        return  $id;
+    public function changepassword(){
+        return view('complains.changepassword');
+    }
+
+    public function savepassword(Request $request){
+        $this->validate($request, [
+            'New_password' => 'required',
+            'Confirm_password' => 'required'
+        ]);
+
+        $id = Auth::user()->id;
+
+        $update = User::find($id);
+        $update->password = bcrypt($request->New_password);
+        $update->save();
+        return redirect()->back()->with('message', 'Your password has been changed succssfully.');
     }
 
 }

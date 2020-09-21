@@ -10,6 +10,10 @@ class Resolution extends Model
     {
         return $this->hasOne('App\Complain', 'id', 'complain_id');
     }
+
+    public function solvers(){
+    	return $this->hasOne('App\User', 'id', 'user_id');
+    }
 }
 
 

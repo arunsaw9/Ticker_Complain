@@ -1,4 +1,4 @@
-
+<?php //echo "<pre>"; print_r($resolution->toArray()); die;?>
 @extends('layouts.myapp')
 
 @section('content')
@@ -59,17 +59,28 @@
                     <div class="card-body pb-3">
                       <div class="card-block">
                           <div class="row">
-                              <div class="col-md-4">
+                              <div class="col-md-3">
                                 <h4 class="card-title font-weight-bold">Subject</h4>
                                 <p class="card-text">{{ $single->subject }}</p>
                               </div>
-                              <div class="col-md-4">
+                              <div class="col-md-3">
                                 <h4 class="card-title font-weight-bold">Date</h4>
                                 <p class="card-text">{{ date('d-m-Y', strtotime($single->created_at)) }}</p>
                               </div>
-                              <div class="col-md-4">
+                              <div class="col-md-3">
                                 <h4 class="card-title font-weight-bold">Status</h4>
                                 <p class="card-text">{{ $single->status }}</p>
+                              </div>
+                              <div class="col-md-3">
+                                <h4 class="card-title font-weight-bold">Resolved By</h4>
+                                <p class="card-text">
+
+                                  @if($resolution->isEmpty())
+
+                                  @else
+                                  {{ $resolution[0]['solvers']['name'] }}
+                                  @endif
+                                </p>
                               </div>
                           </div>
                       </div>
@@ -151,9 +162,6 @@
 @endsection
 
 @section('footerSection')
-<script src="{{ asset('app-assets/vendors/js/charts/apexcharts.min.js') }}"></script>
-<script src="{{ asset('app-assets/js/scripts/charts/chart-apex.min.js')}}"></script>
-<script src="{{ asset('app-assets/js/dashboard.js')}}"></script>
 
 @endsection
 
