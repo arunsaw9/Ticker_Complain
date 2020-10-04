@@ -76,7 +76,7 @@
                                 <p class="card-text">
 
                                   @if($resolution->isEmpty())
-
+                                    Not Resolved
                                   @else
                                   {{ $resolution[0]['solvers']['name'] }}
                                   @endif
