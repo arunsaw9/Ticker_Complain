@@ -79,6 +79,7 @@
                                     Not Resolved
                                   @else
                                   {{ $resolution[0]['solvers']['name'] }}
+                                  ( {{ date('d-m-Y', strtotime($resolution[0]['created_at'])) }} )
                                   @endif
                                 </p>
                               </div>

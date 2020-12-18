@@ -40,12 +40,14 @@ class HomeController extends Controller
     public function search(Request $request){
 
         $this->validate($request,[
-
             'asset' => 'required'
         ]);
-        
-        $complains = Complain::where('location', $request->asset)->with('assets')->get();
-        return view('complains.search', compact('complains'));
+
+        $Serch_asset = Assets::where('id', $request->asset)->get();
+
+         $complains = Complain::where('location', $request->asset)->with('assets')->with('resolutions')->get();
+
+        return view('complains.search', compact('complains', 'Serch_asset'));
     }
 
     public function single($id)

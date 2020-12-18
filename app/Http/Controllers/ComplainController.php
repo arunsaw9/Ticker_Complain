@@ -26,7 +26,7 @@ class ComplainController extends Controller
         //return $request->all();
     	$this->validate($request,[
             'name' =>'required',
-            'email' =>'required',
+            // 'email' =>'required',
             'Services' =>'required',
             'assets' =>'required',
             'sub_location' =>'required',

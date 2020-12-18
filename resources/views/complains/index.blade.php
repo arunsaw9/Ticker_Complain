@@ -56,7 +56,7 @@
                             <th>Location</th>
                             <th>Subject</th>
                             <th>Status</th>
-                            <th>Action</th>
+                            <th>Date</th>
                           </tr>
                         </thead>
                         <tbody>

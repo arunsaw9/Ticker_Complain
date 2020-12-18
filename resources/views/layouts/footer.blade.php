@@ -1,6 +1,6 @@
  <!-- BEGIN: Footer-->
     <footer class="footer footer-static footer-light">
-      <p class="clearfix blue-grey lighten-2 mb-0"><span class="float-md-right d-none d-md-block">Crafted by<a class="text-bold-800 grey darken-2" href="#" target="_blank">ONGC,</a></span>
+      <p class="clearfix blue-grey lighten-2 mb-0"><span class="float-md-right d-none d-md-block">Crafted by<a class="text-bold-800 grey darken-2" href="https://ongcindia.com/wps/wcm/connect/en/home/" target="_blank">ONGC,</a></span>
 
         
         <button class="btn btn-primary btn-icon scroll-top" type="button"><i class="feather icon-arrow-up"></i></button>

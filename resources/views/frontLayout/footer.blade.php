@@ -2,7 +2,7 @@
     <footer id="footer" class="footer-area bg_cover" style="background-image: url(assets/images/footer-bg.jpg)">
         <div class="container">
             <div class="footer-copyright text-center">
-                <p class="text"> Crafted by <a href="https://uideck.com" rel="nofollow">ONGC</a></p>
+                <p class="text"> Crafted by <a href="https://ongcindia.com/wps/wcm/connect/en/home/" target="_blank" rel="nofollow">ONGC</a></p>
             </div>
         </div> <!-- container -->
     </footer>

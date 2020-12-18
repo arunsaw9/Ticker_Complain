@@ -2,6 +2,11 @@
 
 
 @section('main-content')
+<?php
+
+//echo "<pre>"; print_r($errors);die
+
+?>
 
 <section id="contact" class="contact-area pt-120 pb-120">
         <div class="container">
@@ -32,12 +37,20 @@
                                     </div> <!-- contact-form -->
                                     {!! $errors->first('name', '<p class="help-block" style="color: red;">:message</p>') !!}
                                 </div>
-                                <div class="col-md-6">
+
+                                {{-- <div class="col-md-6">
                                     <div class="contact-form mt-15 {{ $errors->has('name') ? 'has-error' : ''}}">
                                         <label> Email</label>
                                         <input type="email" name="email" placeholder="Email" value="{{ old('email') }}">
                                         {!! $errors->first('email', '<p class="help-block" style="color: red;">:message</p>') !!}
-                                    </div> <!-- contact-form -->
+                                    </div> 
+                                </div> --}}
+
+                                <div class="col-md-6">
+                                    <div class="contact-form mt-15">
+                                        <label> Email</label>
+                                        <input type="text" name="email" placeholder="Email" value="{{ old('email') }}">
+                                    </div> 
                                 </div>
                             </div>
 
@@ -50,29 +63,31 @@
                                     </div> <!-- contact-form -->
                                 </div>
                                 <div class="col-md-6">
-                                    <div class="contact-form mt-15 ">
+                                    <div class="contact-form mt-15 {{ $errors->has('name') ? 'has-error' : ''}}">
                                         <label>CPF No.</label>
                                         <input type="number" class="no-arrow" name="cpf_no" placeholder="CPF no" value="{{ old('cpf_no') }}" >
-                                        
-                                    </div> <!-- contact-form -->
+                                         {!! $errors->first('cpf_no', '<p class="help-block" style="color: red;">:message</p>') !!}
+                                    </div> <!-- contact-form --> 
                                 </div>
                             </div>
 
                             <div class="row">
+
+
                                 <div class="col-md-6">
                                     <div class="contact-form mt-15 {{ $errors->has('name') ? 'has-error' : ''}}">
-                                        <div class="form-group">
-                                          <label class="control-label" for="">Assets</label>
-                                            <select id="assets_location" class="form-control" name="assets" required >
-                                                <option hidden >Select Assets</option>
-                                              @foreach($assets as $asset)
-                                                <option value="{{ $asset->id }}">{{ $asset->asset }}</option>
-                                              @endforeach
-                                            </select>
-                                          {!! $errors->first('assets', '<p class="help-block" style="color: red;">:message</p>') !!}
-                                        </div>
+                                        <label for="">Assets</label>
+                                        <select id="assets_location" class="form-control" name="assets">
+                                            <option hidden >Select Assets</option>
+                                                @foreach($assets as $asset)
+                                                    <option value="{{ $asset->id }}">{{ $asset->asset }}</option>
+                                                @endforeach
+                                        </select> 
+                                        {!! $errors->first('assets', '<p class="help-block" style="color: red;">:message</p>') !!}
                                     </div>
                                 </div>
+
+
 
                                 <div class="col-md-6">
                                     <div class="contact-form mt-15 {{ $errors->has('name') ? 'has-error' : ''}}">
@@ -86,11 +101,14 @@
                             </div>
 
                             <div class="row">
+                                
+
                                 <div class="col-md-6">
                                     <div class="contact-form mt-15 {{ $errors->has('name') ? 'has-error' : ''}}">
-                                        <label for="">Sub Location</label>
+                                        <label for="">Select sub location</label>
                                         <select id="sublocation" class="form-control" name="sub_location">
                                             <option hidden >Select sub location</option>
+                                          
                                         </select> 
                                         {!! $errors->first('sub_location', '<p class="help-block" style="color: red;">:message</p>') !!}
                                     </div>
